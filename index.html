@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quotebook Home Page</title>
 
+    <!-- Google APIs for pulling data from the Google Forms! -->
+    <script src="https://apis.google.com/js/api.js"></script>
+
     <!-- CSS links -->
     <link rel="stylesheet" href="./CSS/index.css" />
 
@@ -48,5 +51,17 @@
       <button onclick="addQuote()">Add a Quote</button>
       <div class="inputContainer" id="inputContainer"></div>
     </div>
+
+    <button id="authorize-button" onclick="handleAuthClick()">Authorize</button>
+
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSd1orUP3ojhWCIMHAmgWayf6LmfJTl0Uuxom2W2sCe4HUPOEA/viewform?embedded=true"
+      width="640"
+      height="719"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      >Loading…</iframe
+    >
   </body>
 </html>

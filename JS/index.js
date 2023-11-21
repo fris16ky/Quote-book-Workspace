@@ -1,15 +1,43 @@
 const GenRdmQuote = document.querySelector(".GenRdmQuote button");
-const sql = require("mssql");
 var isClicked = false;
 
-// Configuration for  SQL Server
-const config = {
-  server: "FRISKYOGA\\SQLEXPRESS",
-  database: "Quotebook",
-  options: {
-    trustedConnection: true, // Use Windows Authentication
-  },
-};
+gapi.load("client", initClient);
+
+function initClient() {
+  gapi.client
+    .init({
+      clientId:
+        "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com",
+      discoveryDocs: [
+        "https://sheets.googleapis.com/$discovery/rest?version=v4",
+      ],
+      scope: "https://www.googleapis.com/auth/spreadsheets.readonly",
+    })
+    .then(function () {
+      // Your client is initialized and ready to make API requests.
+    });
+}
+
+function handleAuthClick() {
+  gapi.auth2.getAuthInstance().signIn();
+}
+
+function getDataFromSheet() {
+  gapi.client.sheets.spreadsheets.values
+    .get({
+      spreadsheetId: "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI",
+      range: "Sheet1", // Adjust the sheet name and range accordingly
+    })
+    .then(function (response) {
+      var values = response.result.values;
+      // Process the data as needed
+    });
+}
+
+function handleApiError(error) {
+  console.error("Error:", error);
+  // Implement error handling logic
+}
 
 GenRdmQuote.addEventListener("click", (e) => {
   //when the user clicks on the Generate Random Quote button, pull one from the database and display it neatly on screen. Maybe a pop up window?

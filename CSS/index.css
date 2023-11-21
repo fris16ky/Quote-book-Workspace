@@ -89,3 +89,15 @@ Without this, the Learn More buttons were displaying over it and blocking some o
   font-size: 16pt;
   margin-bottom: 10px;
 }
+
+#authorize-button {
+  background-color: orange; /* Change the color as needed */
+  color: white;
+  font-size: 16pt;
+  margin-bottom: 10px;
+}
+
+#authorize-button:hover {
+  background-color: darkorange; /* Change the hover color as needed */
+  transition: 0.3s ease;
+}
