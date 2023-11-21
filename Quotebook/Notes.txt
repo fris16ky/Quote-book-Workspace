@@ -1,0 +1,31 @@
+Notes from ChatGPT. Had just set up my database and connected it, seems like we can't/shouldn't use it anymore. Google Sheets isn't horrible, and at least
+I still get to parse that information, so I still learn a decent amount. I think I will switch to that. Sucks, but at least I learned
+
+
+If you're hosting your website using GitHub Pages and you're not utilizing a server-side technology like Node.js or PHP, you won't be able to directly 
+connect to a SQL Server database from the client-side (browser-based JavaScript). Directly connecting to a database from the client-side exposes sensitive 
+information and is a security risk.
+
+For GitHub Pages or static websites, you typically need a server-side component to handle interactions with the database. In this case, you might want 
+to consider using a serverless backend service (such as AWS Lambda, Azure Functions, or similar) or a full-fledged server backend using technologies like 
+Node.js, Python, or others.
+
+Here's a simplified approach without server-side:
+
+Form Submission to Google Sheets:
+
+Instead of directly interacting with a SQL Server database, you can use Google Sheets as a simple backend. You can set up a Google Form to collect user 
+input, and the responses will be stored in a Google Sheet. Your JavaScript code can then interact with Google Sheets.
+Google Sheets API:
+
+You would use the Google Sheets API to read and write data from/to the Google Sheet. This can be done directly from JavaScript running in the browser.
+Please note that this is a workaround and is not as secure or scalable as using a server-side backend for database interactions. If you have sensitive 
+data or complex interactions, it's highly recommended to use a proper server-side solution.
+
+Here's a general outline:
+
+Create a Google Form to collect the user input.
+Set up a Google Sheet to store the form responses.
+Use the Google Sheets API in your JavaScript code to interact with the Google Sheet.
+If you're interested in this approach, you can explore the Google Sheets API documentation for more details. If you decide to use a more robust solution 
+in the future, you would need to set up a server-side component to handle database interactions securely.

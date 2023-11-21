@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotebook Home Page</title>
+
+    <!-- CSS links -->
+    <link rel="stylesheet" href="./CSS/index.css" />
+
+    <!-- JS -->
+    <script src="JS/index.js" defer></script>
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="./Media/Images/L_favicon.png" type="image/png" /> -->
+  </head>
+  <body>
+    <!-- Top bar navigation -->
+    <nav class="navi">
+      <ul>
+        <li><a href="./Pages/tally.html">Quote Tally</a></li>
+        <li><a href="./Pages/about.html">About Us</a></li>
+        <li><a href="./Pages/compendium.html">Quote Compendium</a></li>
+        <li><a href="#top">Home</a></li>
+      </ul>
+    </nav>
+    <div class="Disclaimer">
+      <h1>DISCLAIMER</h1>
+      <p>
+        Howdy! Disclaimer: These quotes were made in a secure setting in which
+        everyone was comfortable (maybe a little TOO comfortable) and meant
+        absolutely no disrespect or harm towards any peoples in this world. If
+        you take offense to these quotes, we're sincerely sorry, logging and
+        displaying these quotes is purely for fun.
+      </p>
+    </div>
+
+    <!-- Quote of the day -->
+    <div class="QuoteOfTheDay"></div>
+
+    <!-- Generate a Random Quote from the Database (tbd) -->
+    <div class="GenRdmQuote">
+      <button onclick="GenRdmQuote()">Generate Random Quote</button>
+    </div>
+
+    <!-- Add a quote to the Database! -->
+    <div class="AddQuoteContainer" id="AddQuoteContainer">
+      <button onclick="addQuote()">Add a Quote</button>
+      <div class="inputContainer" id="inputContainer"></div>
+    </div>
+  </body>
+</html>
