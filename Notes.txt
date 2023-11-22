@@ -1,6 +1,8 @@
 Notes from ChatGPT. Had just set up my database and connected it, seems like we can't/shouldn't use it anymore. Google Sheets isn't horrible, and at least
 I still get to parse that information, so I still learn a decent amount. I think I will switch to that. Sucks, but at least I learned
 
+HMMMM COULD MAYBE STILL USE A DATABASE - or should? Could parse the information from Google Forms and then populate the database? Otherwise, not sure
+how to remove Quotes, aside from manually doing it as the owner of the Google Form? 
 
 If you're hosting your website using GitHub Pages and you're not utilizing a server-side technology like Node.js or PHP, you won't be able to directly 
 connect to a SQL Server database from the client-side (browser-based JavaScript). Directly connecting to a database from the client-side exposes sensitive 

@@ -1,39 +1,68 @@
 const GenRdmQuote = document.querySelector(".GenRdmQuote button");
 var isClicked = false;
 
-gapi.load("client", initClient);
+const SPREADSHEET_ID = "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI";
+const CLIENT_ID =
+  "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com";
 
-function initClient() {
-  gapi.client
-    .init({
-      clientId:
-        "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com",
-      discoveryDocs: [
-        "https://sheets.googleapis.com/$discovery/rest?version=v4",
-      ],
-      scope: "https://www.googleapis.com/auth/spreadsheets.readonly",
-    })
-    .then(function () {
-      // Your client is initialized and ready to make API requests.
-    });
-}
+// // Fetch data from Google Sheets
+// fetch(
+//   `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Sheet1?key=${CLIENT_ID}`
+// )
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Process the data as needed
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.error("Error fetching data:", error);
+//   });
 
+// Array of API discovery documents for different APIs
+const DISCOVERY_DOCS = [
+  "https://sheets.googleapis.com/$discovery/rest?version=v4",
+];
+
+// Authorization scopes required by the API
+const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+// Function to handle authorization
 function handleAuthClick() {
   gapi.auth2.getAuthInstance().signIn();
 }
 
+// Function to initialize the Google API client
+function initClient() {
+  gapi.client
+    .init({
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES,
+    })
+    .then(function () {
+      // Your client is initialized and ready to make API requests.
+      console.log("Client initialized successfully");
+    });
+}
+
+// Load the Google API client library
+gapi.load("client", initClient);
+
+// Function to fetch data from Google Sheets using OAuth 2.0
 function getDataFromSheet() {
   gapi.client.sheets.spreadsheets.values
     .get({
-      spreadsheetId: "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI",
+      spreadsheetId: SPREADSHEET_ID,
       range: "Sheet1", // Adjust the sheet name and range accordingly
     })
     .then(function (response) {
       var values = response.result.values;
+      console.log(values);
       // Process the data as needed
     });
 }
 
+// Function to handle API errors
 function handleApiError(error) {
   console.error("Error:", error);
   // Implement error handling logic
