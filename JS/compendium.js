@@ -7,15 +7,6 @@ const config = {
   database: "your_database",
 };
 
-const sql = require("mssql");
-
-const config = {
-  user: "your_username",
-  password: "your_password",
-  server: "your_server",
-  database: "your_database",
-};
-
 function PullData() {
   // Connect to the database
   sql
