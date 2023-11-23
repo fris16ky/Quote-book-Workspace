@@ -1,6 +1,7 @@
 // compendium.js
 
-const SPREADSHEET_ID = "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI";
+const SPREADSHEET_ID =
+  "1FAIpQLSd1orUP3ojhWCIMHAmgWayf6LmfJTl0Uuxom2W2sCe4HUPOEA";
 const CLIENT_ID =
   "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com";
 const API_KEY = "AIzaSyDouwpV2nv5zWXzswzIlo_OAp3ZmJHqtpM";
