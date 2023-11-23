@@ -1,7 +1,6 @@
 // compendium.js
 
-const SPREADSHEET_ID =
-  "1FAIpQLSd1orUP3ojhWCIMHAmgWayf6LmfJTl0Uuxom2W2sCe4HUPOEA";
+const SPREADSHEET_ID = "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI";
 const CLIENT_ID =
   "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com";
 const API_KEY = "AIzaSyDouwpV2nv5zWXzswzIlo_OAp3ZmJHqtpM";
@@ -32,6 +31,7 @@ function initClient() {
 
 // Function to fetch data from Google Sheets using API key
 function getDataFromSheet() {
+  const endpoint = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Sheet1`;
   return gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
     range: "Sheet1", // Adjust the sheet name and range accordingly
