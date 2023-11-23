@@ -1,14 +1,3 @@
-const express = require("express");
-const sql = require("mssql");
-const app = express();
-
-const config = {
-  user: "your_username",
-  password: "",
-  server: "your_server",
-  database: "your_database",
-};
-
 function PullData() {
   // Make a GET request to the server endpoint
   fetch("/get-quotes")
