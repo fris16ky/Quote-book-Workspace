@@ -4,6 +4,14 @@ I still get to parse that information, so I still learn a decent amount. I think
 HMMMM COULD MAYBE STILL USE A DATABASE - or should? Could parse the information from Google Forms and then populate the database? Otherwise, not sure
 how to remove Quotes, aside from manually doing it as the owner of the Google Form? 
 
+So, I believe I have the functions/javascript set up correctly? Just need to actually call the function. Idk, maybe call it everytime I click something? 
+i.e. Generate Random Quote, Add a Quote, any of the Navigation Links. I guess I'll only need it for the Compendium? Or maybe to just populate the database if
+I'm going to go back and try? Feel like it'd be fun to still incorporate the DB. Would make things easier as well. 
+Maybe add a "Populate Database" button?
+Keep in mind, could maybe go through the SQL Server extension (has some sort of directions and other maybe important info??)
+
+SQLTools isn't working, but an SQL Server Extension that I had before I KNOW works - so maybe just look for a new fucking video ig
+
 If you're hosting your website using GitHub Pages and you're not utilizing a server-side technology like Node.js or PHP, you won't be able to directly 
 connect to a SQL Server database from the client-side (browser-based JavaScript). Directly connecting to a database from the client-side exposes sensitive 
 information and is a security risk.

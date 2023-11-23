@@ -51,3 +51,14 @@ Without this, the Learn More buttons were displaying over it and blocking some o
 .navi .name a:hover {
   background-color: darkorchid;
 }
+
+.GetBtn {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.GetBtn button {
+  background-color: green;
+  color: white;
+  font-size: 16pt;
+}

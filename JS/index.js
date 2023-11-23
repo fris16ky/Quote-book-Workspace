@@ -57,8 +57,22 @@ function getDataFromSheet() {
     })
     .then(function (response) {
       var values = response.result.values;
-      console.log(values);
-      // Process the data as needed
+
+      // Assuming the data structure is consistent (rows and columns)
+      for (var i = 0; i < values.length; i++) {
+        var row = values[i];
+        // Access each cell in the row
+        var cell1 = row[0]; // Assuming the first cell contains the desired data
+        var cell2 = row[1]; // Assuming the second cell contains additional data
+        // ... process and use the data as needed
+        console.log(
+          "Row " + (i + 1) + " - Cell 1: " + cell1 + ", Cell 2: " + cell2
+        );
+      }
+    })
+    //need to do this part myself
+    .catch(function (error) {
+      console.error("Error fetching data:", error);
     });
 }
 
