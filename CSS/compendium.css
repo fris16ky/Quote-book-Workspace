@@ -62,3 +62,7 @@ Without this, the Learn More buttons were displaying over it and blocking some o
   color: white;
   font-size: 16pt;
 }
+
+.quotesContainer {
+  margin-top: 125px;
+}
