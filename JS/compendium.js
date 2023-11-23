@@ -3,6 +3,7 @@
 const SPREADSHEET_ID = "1-JC3s8fswWQ-K0kwhGXvHG5ZP6X4wptyAVHFpF6myeI";
 const CLIENT_ID =
   "877832616584-i3mvtg0mflf6jv2a65jntldl7n47k927.apps.googleusercontent.com";
+const API_KEY = "AIzaSyDouwpV2nv5zWXzswzIlo_OAp3ZmJHqtpM";
 
 // Array of API discovery documents for different APIs
 const DISCOVERY_DOCS = [
@@ -19,9 +20,8 @@ gapi.load("client", initClient);
 function initClient() {
   gapi.client
     .init({
-      clientId: CLIENT_ID,
+      apiKey: API_KEY,
       discoveryDocs: DISCOVERY_DOCS,
-      scope: SCOPES,
     })
     .then(function () {
       // Your client is initialized and ready to make API requests.
@@ -29,17 +29,18 @@ function initClient() {
     });
 }
 
-// Function to fetch data from Google Sheets using OAuth 2.0
+// Function to fetch data from Google Sheets using API key
 function getDataFromSheet() {
   return gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
     range: "Sheet1", // Adjust the sheet name and range accordingly
+    key: API_KEY,
   });
 }
 
 // Function to handle API errors
 function handleApiError(error) {
-  console.error("Error:", error);
+  console.error("API Error:", error);
   // Implement error handling logic
 }
 
