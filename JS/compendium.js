@@ -26,7 +26,8 @@ function initClient() {
     .then(function () {
       // Your client is initialized and ready to make API requests.
       console.log("Client initialized successfully");
-    });
+    })
+    .catch((error) => handleApiError(error, "Client Initialization"));
 }
 
 function getDataFromSheet() {
@@ -38,9 +39,9 @@ function getDataFromSheet() {
 }
 
 // Function to handle API errors
-function handleApiError(error) {
-  console.error("API Error:", error);
-  // Implement error handling logic
+function handleApiError(error, context = "API Request") {
+  console.error(`${context} Error:`, error);
+  // Implement error handling logic, e.g., display an error message to the user
 }
 
 // Function to pull data and display it
