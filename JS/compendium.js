@@ -29,9 +29,7 @@ function initClient() {
     });
 }
 
-// Function to fetch data from Google Sheets using API key
 function getDataFromSheet() {
-  const endpoint = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Sheet1`;
   return gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
     range: "Sheet1", // Adjust the sheet name and range accordingly
